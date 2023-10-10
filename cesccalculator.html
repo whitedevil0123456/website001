@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cesc calculators</title>
+    <style>.box11{
+        height: 5rem;
+        width: 100rem;
+        background-color: lightskyblue;
+        font-size: 30px;
+        text-align: center;
+    }
+    /* Add a black background color to the top navigation bar */
+    .topnav {
+        overflow: hidden;
+        background-color: rgb(138, 232, 255);
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Style the "active" element to highlight the current page */
+    .topnav a.active {
+      background-color: #2196F3;
+      color: black;
+    }
+
+    /* Style the search box inside the navigation bar */
+    .topnav input[type=text] {
+      float: right;
+      padding: 6px;
+      border: none;
+      margin-top: 8px;
+      margin-right: 16px;
+      font-size: 17px;
+    }
+
+    /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+    @media screen and (max-width: 600px) {
+      .topnav a, .topnav input[type=text] {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+      }
+      .topnav input[type=text] {
+        border: 1px solid black;
+      }
+    }
+            /* The dropdown container */
+            .dropdown {
+          float: left;
+          overflow: hidden;
+          padding-right: 40px;
+        }
+
+        /* Dropd own button */
+        .dropdown .dropbtn {
+          font-size: 16px;
+          border: none;
+          outline: none;
+          color: white;
+          padding: 14px 16px;
+          background-color: inherit;
+          font-family: inherit; /* Important for vertical align on mobile phones */
+          margin: 0; /* Important for vertical align on mobile phones */
+        }
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+          background-color: red;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      /* Add a grey background color to dropdown links on hover */
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+
+      /* Show the dropdown menu on hover */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .box3{
+        background-color: black;
+        color: lightcoral;
+        font-size: 30px;
+        text-align: center;
+      }
+      .subbox1{        
+        background-color: black;
+        color: lightcoral;
+        font-size: 15px;
+        text-align: center;
+        
+      }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box11">SHOAIB'S PAGE</div>
+        <div class="box12"><div class="topnav">
+            <a class="tuition.html" href="">TUITION</a>
+            <a href="about.html">ABOUT</a>
+            <a href="UTILITIES.html">UTILITIES</a>
+            <div class="dropdown">
+              <button class="dropbtn">More
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="wb.html">web development</a>
+                <a href="python.html">python</a>
+                <a href="convertors.html">convertors</a>
+                <a href="cesccalculator.html">CESC calculator</a>
+              </div>
+            </div>
+            <input type="text" placeholder="Search..">
+          </div>
+        <h2>cesc convertor</h2>
+          <p>
+          <label>user</label>
+          <input id="user" type="text" placeholder="user" oninput="userre(this.value)" onchange="userre(this.value)">
+        </p>
+        <p>
+          <label>units</label>
+          <input id="units" type="number" placeholder="units" oninput="unitsre(this.value)" onchange="calcu(this.value)">
+        </p>
+        <p>The Electricity bill of <span id="user"><span id="output"></span></span></p>
+
+    </div>
+    <div class="box3">DEVELOPED BY SHOAIB ALI 
+        <div class="subbox1">for more inforation please visit about us section.</div>
+      </div>
+      
+</body>
+<script>
+  function userre(value){
+      let user=value
+      document.getElementById("output").innerHTML=user
+  }
+  function unitsre(value){
+      let units=value
+  }
+  let fa=15
+  let mc=10
+  function calcu(units){
+      if(units<=25){
+          let mvca1=units*0.29
+          let sum1=(units*4.89)+mvca1+fa+mc
+          let c ="is "+sum1
+          document.getElementById("output").innerHTML=c
+      }
+      else if( units>25 && units<=60){
+          let mvca2=units*0.29
+          let sum2=(25*4.89)+((units-25)*5.40)+mvca2+fa+mc
+          let c2="is "+sum2
+          document.getElementById("output").innerHTML=c2
+      }
+      else if(units>60 && units<=100){
+          let mvca3=units*0.29
+          let sum3=(25*4.89)+(35*5.40)+(units-60)*6.41+mvca3+fa+mc
+          let c3="is "+sum3
+          document.getElementById("output").innerHTML=c3
+      }
+      else if(units>100 && units<=150){
+          let mvca4=units*0.29
+          let sum4=(25*4.89)+(35*5.40)+(40*6.41)+(units-100)*7.16+mvca4+fa+mc
+          let c4="is "+sum4
+          document.getElementById("output").innerHTML=c4
+      }
+      else if(units>150 && units<=300){
+          let mvca5=units*0.29
+          let sum5=(25*4.89)+(35*5.40)+(40*6.41)+50*7.16+(units-150)*7.33+mvca5+fa+mc
+          let c5="is "+sum5
+          document.getElementById("output").innerHTML=c5        
+      }
+      else if(units>300){
+          let mvca6=units*0.29
+          let sum6=(25*4.89)+(35*5.40)+(40*6.41)+50*7.16+150*7.33+(units-300)*8.92+mvca6+fa+mc
+          let c6="is "+sum6
+          document.getElementById("output").innerHTML=c6
+      }
+  }
+</script>
+</html>
